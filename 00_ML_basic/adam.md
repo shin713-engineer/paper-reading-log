@@ -35,8 +35,9 @@ Algorithm:
 
 ## 6. Important Equations
 
-gradient : \[g_t = \nabla_\theta f_t(\theta_{t-1})\]
-
+gradient : $$
+g_t = \nabla_\theta f_t(\theta_{t-1})
+$$
 momentum
 mt​=β1​⋅mt−1​+(1−β1​)⋅gt​
 
