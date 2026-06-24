@@ -30,20 +30,42 @@ bias correction
 
 ## 5. Method / Architecture
 
-Algorithm: 
-1. gradient messure
+## Algorithm
 
-## 6. Important Equations
+The Adam algorithm proceeds as follows.
 
-gradient : $$
+1. Compute the gradient at time step $t$:
+
+$$
 g_t = \nabla_\theta f_t(\theta_{t-1})
 $$
-momentum
-mt​=β1​⋅mt−1​+(1−β1​)⋅gt​
 
-vt​=β2​⋅vt−1​+(1−β2​)⋅gt2​
+2. Update the first and second moment estimates:
 
-## 7. Experiments and Results
-## 8. Strengths
-## 9. Limitations
-## 10. Connection to My Research
+$$
+m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t
+$$
+
+$$
+v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2
+$$
+
+3. Apply bias correction:
+
+$$
+\hat{m}_t = \frac{m_t}{1-\beta_1^t}
+$$
+
+$$
+\hat{v}_t = \frac{v_t}{1-\beta_2^t}
+$$
+
+4. Update the parameter:
+
+$$
+\theta_t = \theta_{t-1} - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}
+$$
+
+## 6. Experiments and Results
+## 7. Limitations
+## 8. Connection to My Research
