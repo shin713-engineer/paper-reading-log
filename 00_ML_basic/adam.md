@@ -77,8 +77,11 @@ $$
 $$
 
 direction: like momentum
+
 $\alpha$ : entire step size
+
 $\epsilon$ : to prevent dividing by zero 
+
 ## 6. Experiments and Results
 ## 7. Limitations
 ## 8. Connection to My Research
