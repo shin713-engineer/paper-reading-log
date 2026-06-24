@@ -25,10 +25,14 @@ it combines two alogorithms above
 
 adam has adaptive learning rate so it applies individual learning rate for each parameter
 
-bias correction 
+bias correction
 
 
 ## 5. Method / Architecture
+
+## goal 
+
+minimizing loss funciton 
 
 ## Algorithm
 
@@ -45,10 +49,12 @@ $$
 $$
 m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t
 $$
+moving average of gradient 
 
 $$
 v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2
 $$
+moving average of gradient size 
 
 3. Apply bias correction:
 
@@ -59,13 +65,16 @@ $$
 $$
 \hat{v}_t = \frac{v_t}{1-\beta_2^t}
 $$
+bias-corrected estimates
 
 4. Update the parameter:
 
 $$
 \theta_t = \theta_{t-1} - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}
 $$
-
+direction: like momentum
+$\alpha$ : entire step size
+$\epsilon$ : to prevent dividing by zero 
 ## 6. Experiments and Results
 ## 7. Limitations
 ## 8. Connection to My Research
