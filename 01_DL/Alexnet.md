@@ -17,12 +17,40 @@ CNN is useful in image classification, object recognition and ALexnet makes it p
 introduce featurs used for improving performance and reducing training time 
 alse introduce the method to prevent overfitting
 
-## 4. Key Idea
+## 4. Method / Architecture
+
+## ReLU 
+
+### ReLU Nonlinearity
+
+Traditional activation functions such as the sigmoid function and hyperbolic tangent function are saturating nonlinearities:
+
+$$
+f(x) = \frac{1}{1 + e^{-x}}
+$$
+
+$$
+f(x) = \tanh(x)
+$$
+
+These functions can suffer from the vanishing gradient problem. When the input $x$ is very large or very small, the function becomes almost flat, so its gradient becomes close to zero.
+
+In contrast, ReLU is defined as:
+
+$$
+f(x) = \max(0, x)
+$$
+
+For positive inputs, the derivative of ReLU is always $1$:
+
+$$
+f'(x) = 1 \quad \text{for } x > 0
+$$
+
+Therefore, gradients can flow more easily during backpropagation. This is why ReLU allows deep neural networks to train faster than saturating activation functions such as sigmoid or tanh.
 
 
-
-## 5. Method / Architecture
-## 6. Important Equations
-## 7. Experiments and Results
-## 8. Thinkings 
-## 10. Connection to My Research
+## 5. Important Equations
+## 6. Experiments and Results
+## 7. Thinkings 
+## 8. Connection to My Research
