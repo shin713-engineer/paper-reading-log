@@ -105,7 +105,7 @@ Input image
 → FC6 → ReLU
 → FC7 → ReLU
 → FC8 → Softmax
-
+'''
 The convolutional layers extract visual features from the input image, while the fully-connected layers use these features for final classification. The last fully-connected layer produces 1000 outputs, corresponding to the 1000 ImageNet classes.
 
 A notable feature of AlexNet is that the model is split across two GPUs. Some convolutional layers communicate across both GPUs, while others only use feature maps from the same GPU. This design reduces memory and communication costs while allowing a large CNN to be trained efficiently.
