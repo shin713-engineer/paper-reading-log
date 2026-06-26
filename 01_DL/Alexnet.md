@@ -59,8 +59,6 @@ This design reduces the memory burden and allows the model to be trained efficie
 
 ## Local Response Normalization
 
-### Local Response Normalization
-
 Local Response Normalization normalizes the activation of a neuron using the activations of nearby feature maps at the same spatial position.
 
 $$
