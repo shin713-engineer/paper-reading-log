@@ -61,23 +61,25 @@ This design reduces the memory burden and allows the model to be trained efficie
 
 Local Response Normalization normalizes the activation of a neuron using the activations of nearby feature maps at the same spatial position.
 
-$$
+```math
 b_{x,y}^{i}
 =
-\frac{a_{x,y}^{i}}
-{\left(
+\frac{
+a_{x,y}^{i}
+}{
+\left(
 k + \alpha
 \sum_{j=\max(0,\, i-n/2)}^{\min(N-1,\, i+n/2)}
 \left(a_{x,y}^{j}\right)^2
-\right)^{\beta}}
-$$
+\right)^{\beta}
+}
+```
 
 Here, $a_{x,y}^{i}$ is the activation before normalization, and $b_{x,y}^{i}$ is the normalized activation. The summation is computed over nearby feature maps at the same spatial position $(x,y)$.
 
 The intuition is that if many nearby feature maps have large activations at the same location, the denominator becomes large and suppresses the current activation. This creates a competition between feature maps, similar to lateral inhibition.
 
 In AlexNet, this normalization was used after ReLU in certain layers and helped improve generalization.
-
 ## Overlapping Pooling
 
 pooling window size: z × z
